@@ -1,0 +1,8 @@
+#!/bin/bash
+set -e
+julia -e '
+    using WebIO, IJulia
+    WebIO.install_jupyter_labextension()
+    WebIO.install_jupyter_nbextension()
+    println("Installed WebIO jupyter extensions.")
+'

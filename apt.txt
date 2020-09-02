@@ -1,0 +1,3 @@
+# unmanaged ORCA dependencies to support plotlyjs under Chrome (firefox works without surprisingly)
+libnss3-dev
+libgtk-3-0
