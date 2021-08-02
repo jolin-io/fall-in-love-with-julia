@@ -4,7 +4,7 @@
 
 An introductory 101 series to get to know the power of Julialang.
 
-Author: Stephan Sahm, s.sahm@reply.de, [Julia User Group Munich](https://www.meetup.com/Julia-User-Group-Munich/).
+Author: Stephan Sahm, [Julia User Group Munich](https://www.meetup.com/Julia-User-Group-Munich/).
 
 
 ## Why Julia?
