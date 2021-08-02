@@ -1,3 +1,5 @@
+![image](logo-fall-in-love-with-julia.png)
+
 # fall-in-love-with-julia
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/master)
