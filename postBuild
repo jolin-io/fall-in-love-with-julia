@@ -1,17 +1,24 @@
 #!/bin/bash
-# UNCOMMENT EVERYTHING. This is just a workaround around https://github.com/nodesource/distributions/issues/1266
-# set -e
-# 
-# # fixing certificate error from around 01.10.2021 https://github.com/nodesource/distributions/issues/1266
+set -e
+
+# fixing certificate error from around 01.10.2021 https://github.com/nodesource/distributions/issues/1266
+wget -O certs.deb http://ftp.fr.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20210119_all.deb
+dpkg --fsys-tarfile certs.deb | tar -xOf - ./usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt > /usr/local/share/ca-certificates/ISRG_Root_X1.crt
+# remove expired one
+rm -rf /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt
+update-ca-certificates
+
 # apt update
 # apt install ca-certificates
 # apt install libgnutls30
-# 
-# # enabling WebIO
-# conda install nodejs
-# julia -e '
-#     using WebIO, IJulia
-#     # WebIO.install_jupyter_labextension()  # does rais errors currently
-#     WebIO.install_jupyter_nbextension()
-#     println("Installed WebIO jupyter extensions.")
-# '
+# curl -s http://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add -
+# sh -c "echo deb http://deb.nodesource.com/node_14.x focal main > /etc/apt/sources.list.d/nodesource.list"
+
+# enabling WebIO
+conda install nodejs
+julia -e '
+    using WebIO, IJulia
+    # WebIO.install_jupyter_labextension()  # does rais errors currently
+    WebIO.install_jupyter_nbextension()
+    println("Installed WebIO jupyter extensions.")
+'
