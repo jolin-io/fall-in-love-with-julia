@@ -1,18 +1,18 @@
 #!/bin/bash
-# set -e
-# 
-# # fixing certificate error from around 01.10.2021 https://github.com/nodesource/distributions/issues/1266
-# wget -O certs.deb http://ftp.fr.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20210119_all.deb
-# dpkg --fsys-tarfile certs.deb | tar -xOf - ./usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt > /usr/local/share/ca-certificates/ISRG_Root_X1.crt
-# # remove expired one
-# rm -rf /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt
-# update-ca-certificates
-# 
-# # enabling WebIO
-# conda install nodejs
-# julia -e '
-#     using WebIO, IJulia
-#     # WebIO.install_jupyter_labextension()  # does rais errors currently
-#     WebIO.install_jupyter_nbextension()
-#     println("Installed WebIO jupyter extensions.")
-# '
+set -e
+
+# fixing certificate error from around 01.10.2021 https://github.com/nodesource/distributions/issues/1266
+wget -O certs.deb http://ftp.fr.debian.org/debian/pool/main/c/ca-certificates/ca-certificates_20210119_all.deb
+dpkg --fsys-tarfile certs.deb | tar -xOf - ./usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt > /usr/local/share/ca-certificates/ISRG_Root_X1.crt
+# remove expired one
+rm -rf /usr/share/ca-certificates/mozilla/DST_Root_CA_X3.crt
+update-ca-certificates
+
+# enabling WebIO
+conda install nodejs
+julia -e '
+    using WebIO, IJulia
+    # WebIO.install_jupyter_labextension()  # does rais errors currently
+    WebIO.install_jupyter_nbextension()
+    println("Installed WebIO jupyter extensions.")
+'
