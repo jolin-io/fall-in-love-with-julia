@@ -44,7 +44,7 @@ urlpath=pluto/open?path=/home/jovyan/06%20pluto%20notebooks%20-%2001%20introduct
 cm"""
 # Welcome to Pluto.jl!
 
-How can you use this notebook? 🔎 For a summary see [this wiki entry](https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%94%8E-Basic-Commands-in-Pluto.)
+How can you use this notebook? 🔎 For a basic summary see [this wiki entry](https://github.com/fonsp/Pluto.jl/wiki/%F0%9F%94%8E-Basic-Commands-in-Pluto.)
 """
 
 # ╔═╡ 67dcf398-fc6a-4963-a390-d3dcfc69ea8d
@@ -54,13 +54,28 @@ How can you use this notebook? 🔎 For a summary see [this wiki entry](https://
 x = 10 # definitions create dependencies
 
 # ╔═╡ 415fd393-eca0-4630-9be5-8a8265560b0d
-y = x * x  # try changing `a` and see what happens
+y = x * x  # try changing `x` and see what happens
 
 # ╔═╡ f31bc6f0-4fd6-444f-89df-8680deea986d
 sin(y)  # open the Live docs on the right, then click onto `sin`
 
 # ╔═╡ 11c03bd1-8752-4b9d-a3c5-203fb7a5872f
 cm"""Task: drag and drop the cells above to change their order"""
+
+# ╔═╡ 396eb8cb-43cf-4c39-9610-b3e107b1e9dc
+cm"""
+## Keyboard Shortcuts
+
+> `Shift+Enter`\- run cell
+> 
+> `Ctrl+Enter`\- run cell and add cell below
+> 
+> `Tab`\- show autocomplete
+> 
+> `F1`\- show keyboard shortcuts
+> 
+> The full list is [here](https://github.com/fonsp/Pluto.jl/issues/65#issue-595782206)
+"""
 
 # ╔═╡ d055e80b-6efb-4f78-9506-a886139598d9
 cm"""## Caution with Mutation"""
@@ -128,7 +143,6 @@ cm"""
 `e = ` $(@bind e html"<select><option value='one'>First</option><option value='two'>Second</option></select>")
 
 `f = ` $(@bind f html"<input type=color >")
-
 """
 
 # ╔═╡ 053a6e13-cfa7-431e-84cf-0839c8250f97
@@ -157,7 +171,7 @@ TableOfContents()
 cm"""**Explore many more PlutoUI objects:**
 
 1. copy the url `https://raw.githubusercontent.com/fonsp/Pluto.jl/main/sample/PlutoUI.jl.jl`
-2. Press and hold CTRL key and click on the Pluto logo at the very top
+2. right-click on the Pluto logo at the very top, and click "open link in new tab"
 3. In the Pluto main window paste the url in the textfield "open from file"
 """
 
@@ -346,7 +360,7 @@ $(1 + 1)$(1 + 1)
 cm"""## Better HypertextLiteral.jl than Html"""
 
 # ╔═╡ d45cd163-62ab-4319-b6e5-1d3a6b4aa791
-cm"""With html you cannot use standard interpolation"""
+cm"""With `html"..."` string-macro you cannot use standard interpolation"""
 
 # ╔═╡ 799cc47b-9a65-4990-92ad-07b745341559
 who = "😽"
@@ -360,9 +374,9 @@ html"""
 cm"""**The solution:** Use `htl"..."` from the package HypertextLiteral.jl instead:"""
 
 # ╔═╡ b908a9bf-6901-4a69-ba9e-a6ceff20fd9d
-@htl("""
+htl"""
 	<p> Hello $(who)!</p>
-""")
+"""
 
 # ╔═╡ 732d4457-55c2-408c-a2c9-bf1b50ac5fbc
 cool_features = [
@@ -372,15 +386,13 @@ cool_features = [
 ]
 
 # ╔═╡ f753db9b-dcfb-4e92-88c4-8ed2ed0bf2f2
-@htl("""
+htl"""
 	<p>It has a bunch of very cool features! Including:</p>
 	<ul>$([
-		@htl(
-			"<li>$(item)</li>"
-		)
+		htl"<li>$(item)</li>"
 		for item in cool_features
 	])</ul>
-""")
+"""
 
 # ╔═╡ 713a6c7c-198c-417a-8d62-560db42d7ea4
 cm"""## Useful HTML helpers"""
@@ -389,29 +401,29 @@ cm"""## Useful HTML helpers"""
 cm"`embed_display`"
 
 # ╔═╡ a304bd24-370b-4abf-a6d9-f7576b4452a2
-@htl("""
+htl"""
 <div style="display: flex;">
-$(embed_display(rand(4)))
-$(embed_display(rand(4)))
+	$(embed_display(rand(4)))
+	$(embed_display(rand(4)))
 </div>
-""")
+"""
 
 # ╔═╡ a79bc022-e895-4e01-a0c1-28f26d23b22a
 cm"`details`"
 
 # ╔═╡ f9f707d1-1471-4ca9-a1ac-66973e061294
-details(x, summary="Show more") = @htl("""
+details(x, summary="Show more") = htl"""
 <details>
 	<summary>$(summary)</summary>
 	$(x)
 </details>
-""")
+"""
 
 # ╔═╡ 5028238f-d4c3-4a7a-a2f4-d3cf83e18767
 details("long content")
 
 # ╔═╡ 6bb3ea1f-9bbf-4226-b554-ac7c5a86bb46
-cm"""Admonitions"""
+cm"""**Admonitions**"""
 
 # ╔═╡ 422b8936-f2a0-4825-9d01-4076ab3d41a4
 admonition(category, title, content) = Markdown.MD(Markdown.Admonition(category, title, [content]))
@@ -423,7 +435,7 @@ admonition("warning", "WARNING: Not recommended!", cm"you can turn off reactivit
 begin
 	admonition_categories = ["info", "note", "hint", "correct", "warning", "danger", "whatever"]	
 	map(admonition_categories) do cat
-		admonition(cat, cat, md"What  beautiful day.")
+		admonition(cat, cat, cm"What  beautiful day.")
 	end
 end
 
@@ -433,11 +445,11 @@ begin
 	
 	almost(text) = admonition("warning", "Almost there!", [text])
 	
-	function keep_working(text=md"The answer is not quite right.")
+	function keep_working(text=cm"The answer is not quite right.")
 		admonition("danger", "Keep working on it!", [text])
 	end
 	
-	function correct(text=md"Great! You got the right answer! Let's move on to the next section.")
+	function correct(text=cm"Great! You got the right answer! Let's move on to the next section.")
 		admonition("correct", "Got it!", [text])
 	end
 end;
@@ -455,7 +467,7 @@ begin
 end
 
 # ╔═╡ a406aaf6-4c9d-4160-a747-0881166b18b5
-hint(md"hello")
+hint(cm"hello")
 
 # ╔═╡ 2452a747-6e0f-4fbd-a46f-f3007f9601a0
 cm"""# Other"""
@@ -528,7 +540,7 @@ cm"""## Favourite Other Pluto Notebooks
 A selection of my favourite Pluto Notebooks published online.
 
 1. copy the url 
-2. Press and hold CTRL key and click on the Pluto logo at the very top
+2. right-click on the Pluto logo at the very top, and click "open link in new tab"
 3. In the Pluto main window paste the url in the textfield “open from file”
 
 
@@ -541,7 +553,7 @@ A selection of my favourite Pluto Notebooks published online.
 """
 
 # ╔═╡ 7058e0b8-a249-4d60-8b5c-4109c7b871f6
-cm"""## Further Resources
+cm"""## Further Pluto Resources
 
 - [official README](https://github.com/fonsp/Pluto.jl)
 - [official FaQ/Wiki](https://github.com/fonsp/Pluto.jl/wiki)
@@ -665,7 +677,8 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╠═415fd393-eca0-4630-9be5-8a8265560b0d
 # ╠═f31bc6f0-4fd6-444f-89df-8680deea986d
 # ╟─11c03bd1-8752-4b9d-a3c5-203fb7a5872f
-# ╠═d055e80b-6efb-4f78-9506-a886139598d9
+# ╟─396eb8cb-43cf-4c39-9610-b3e107b1e9dc
+# ╟─d055e80b-6efb-4f78-9506-a886139598d9
 # ╟─7fce21a5-9e97-44ce-b76a-5711fb62cd3b
 # ╠═68701cb6-71e9-4853-a8e8-7cbcaaaf234b
 # ╠═b4d2b9a0-a4a5-4c14-9092-93b0570628dd
@@ -678,7 +691,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╟─506ddcb3-c9eb-4e23-8a01-040b4103487e
 # ╠═c367af42-71ef-4401-93bd-d2ade01606f5
 # ╟─5629f761-3068-4b90-99a6-ab08b06a3533
-# ╠═8ea36f83-4110-4505-b2e4-8a29c68f5560
+# ╟─8ea36f83-4110-4505-b2e4-8a29c68f5560
 # ╠═b103e55f-0d03-404c-a574-f116cf878ab6
 # ╠═306f0d0a-5151-4ea6-9eb2-1a7d700118f2
 # ╠═053a6e13-cfa7-431e-84cf-0839c8250f97
@@ -687,7 +700,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╠═5e970055-1076-4841-9d2b-ec75e7142a41
 # ╠═7f1fc43b-3f40-4d5b-ba2b-71916ff9b436
 # ╠═addf17dd-be2f-4cdc-952d-115061506532
-# ╠═42e94190-dbae-46d3-9257-bf3318f65b9d
+# ╟─42e94190-dbae-46d3-9257-bf3318f65b9d
 # ╠═cdf7ba93-ec68-4f36-a650-def062ba61f4
 # ╟─227c49cb-e986-45a6-89be-5558fcf3dba1
 # ╟─59fd9fa6-23a0-4ca5-97ce-091c5c74268d
@@ -702,7 +715,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╠═40a43215-70b0-4d10-aee6-ddc7a4ce1257
 # ╟─9d7c3d14-e0e5-43bc-99e7-81774bf325fe
 # ╟─354694a6-f889-439f-8fec-ca7822ec63c3
-# ╠═df3301c4-196f-4ee1-bdf4-c81c71a1104e
+# ╟─df3301c4-196f-4ee1-bdf4-c81c71a1104e
 # ╠═feae1368-a19d-4f0c-96b9-7081b593037a
 # ╠═dfe2781e-ca0e-4cce-a1a0-34c3e913ece6
 # ╟─7b9093a2-842b-4f65-bb35-57cf151d91f5
@@ -714,7 +727,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╟─d45cd163-62ab-4319-b6e5-1d3a6b4aa791
 # ╠═799cc47b-9a65-4990-92ad-07b745341559
 # ╠═213c5b06-6125-4e8d-90e5-f6356a1deeb5
-# ╠═cc5aae01-9279-4cab-9ca7-45ecd7d09d29
+# ╟─cc5aae01-9279-4cab-9ca7-45ecd7d09d29
 # ╠═f644142d-4146-43c0-8049-fb345282b31a
 # ╠═b908a9bf-6901-4a69-ba9e-a6ceff20fd9d
 # ╠═f753db9b-dcfb-4e92-88c4-8ed2ed0bf2f2
