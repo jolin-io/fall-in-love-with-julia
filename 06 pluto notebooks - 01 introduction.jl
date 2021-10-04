@@ -131,7 +131,7 @@ Pluto comes with `@bind` which enables you to link html input elements to julia 
 yourrange
 
 # ╔═╡ 4ad1bae8-ba32-4060-b06a-a1e109cd06fa
-cm"""
+md"""
 `a = ` $(@bind a html"<input type=range >")
 
 `b = ` $(@bind b html"<input type=text >")
@@ -557,6 +557,7 @@ cm"""## Further Pluto Resources
 
 - [official README](https://github.com/fonsp/Pluto.jl)
 - [official FaQ/Wiki](https://github.com/fonsp/Pluto.jl/wiki)
+- [pluto on binder](https://pluto-on-binder.glitch.me/)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
