@@ -34,6 +34,12 @@ using CommonMark
 # ╔═╡ f644142d-4146-43c0-8049-fb345282b31a
 using HypertextLiteral
 
+# ╔═╡ 77efb520-f7d4-44ad-8e8c-f649fb6953a8
+md"""
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/master?
+urlpath=pluto/open?path=/home/jovyan/06%20pluto%20notebooks%20-%2001%20introduction.jl)
+"""
+
 # ╔═╡ 227285cb-0f4a-47ba-9037-143307d6f691
 cm"""
 # Welcome to Pluto.jl!
@@ -142,10 +148,10 @@ PlutoUI gives you a couple of useful helper functions.
 yourslider
 
 # ╔═╡ 42e94190-dbae-46d3-9257-bf3318f65b9d
-md"""uncomment the following line"""
+md"""comment and uncomment the following line"""
 
 # ╔═╡ cdf7ba93-ec68-4f36-a650-def062ba61f4
-# TableOfContents()
+TableOfContents()
 
 # ╔═╡ 227c49cb-e986-45a6-89be-5558fcf3dba1
 cm"""**Explore many more PlutoUI objects:**
@@ -451,8 +457,11 @@ end
 # ╔═╡ a406aaf6-4c9d-4160-a747-0881166b18b5
 hint(md"hello")
 
+# ╔═╡ 2452a747-6e0f-4fbd-a46f-f3007f9601a0
+cm"""# Other"""
+
 # ╔═╡ 58f54383-d123-4c28-9d3b-36cf9585498d
-cm""" # Pluto's Builtin Pkg Manager
+cm""" ## Pluto's Builtin Pkg Manager
 
 By default Pluto creates a blank environment just for your notebook and will install all packages `using MyPackage` into that new environment.
 
@@ -492,6 +501,41 @@ begin
     using Plots, PlutoUI, LinearAlgebra
 end
 ```
+"""
+
+# ╔═╡ 2d511f23-07fc-4290-bace-001bedc09d0f
+cm"""
+## Restrictions when using Pluto
+
+Currently, you cannot use 
+* `Distributed`, and packages that use it ([#300](https://github.com/fonsp/Pluto.jl/issues/300))
+* packages that use lots of macros to create their own syntax ([#196](https://github.com/fonsp/Pluto.jl/issues/196))
+* `@async` in order to update values reactively. Use the `@bind`macro instead
+"""
+
+# ╔═╡ 2f5ce1cc-5de6-47c5-b72f-03aa779aba5c
+cm"""## Favourite Pluto Notebooks
+
+A selection of my favourite Pluto Notebooks published online.
+
+1. copy the url 
+2. Press and hold CTRL key and click on the Pluto logo at the very top
+3. In the Pluto main window paste the url in the textfield “open from file”
+
+
+|Description | URL |
+|----|-------|
+| interactive math puzzle for beginners | `https://raw.githubusercontent.com/fonsp/Pluto.jl/main/sample/Basic%20mathematics.jl` |
+| interactive colour filters | `https://raw.githubusercontent.com/JuliaPluto/PlutoCon2021-demos/main/lukavdplas%20-%20Colour%20filters.jl` |
+| super interactive story telling | `https://raw.githubusercontent.com/JuliaPluto/PlutoCon2021-demos/main/Moser%20%26%20Dorn%20%E2%80%94%20Interactive%20Storytelling%20-%20An%20Odyssey.jl` |
+| interactive drawing | `https://raw.githubusercontent.com/JuliaPluto/PlutoCon2021-demos/main/PaulButler_PenPlottingWithPluto.jl` |
+"""
+
+# ╔═╡ 7058e0b8-a249-4d60-8b5c-4109c7b871f6
+cm"""## Further Resources
+
+- [official README](https://github.com/fonsp/Pluto.jl)
+- [official FaQ/Wiki](https://github.com/fonsp/Pluto.jl/wiki)
 """
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
@@ -605,6 +649,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 """
 
 # ╔═╡ Cell order:
+# ╟─77efb520-f7d4-44ad-8e8c-f649fb6953a8
 # ╟─227285cb-0f4a-47ba-9037-143307d6f691
 # ╠═67dcf398-fc6a-4963-a390-d3dcfc69ea8d
 # ╠═a6741b19-d378-4279-a1e4-70c18eb20cb5
@@ -633,7 +678,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╠═5e970055-1076-4841-9d2b-ec75e7142a41
 # ╠═7f1fc43b-3f40-4d5b-ba2b-71916ff9b436
 # ╠═addf17dd-be2f-4cdc-952d-115061506532
-# ╟─42e94190-dbae-46d3-9257-bf3318f65b9d
+# ╠═42e94190-dbae-46d3-9257-bf3318f65b9d
 # ╠═cdf7ba93-ec68-4f36-a650-def062ba61f4
 # ╟─227c49cb-e986-45a6-89be-5558fcf3dba1
 # ╟─59fd9fa6-23a0-4ca5-97ce-091c5c74268d
@@ -676,7 +721,11 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╠═f137a01d-9964-4588-aca3-350d97c2af35
 # ╠═a406aaf6-4c9d-4160-a747-0881166b18b5
 # ╠═0980486b-dd4f-457a-b974-da3d6287d371
+# ╟─2452a747-6e0f-4fbd-a46f-f3007f9601a0
 # ╟─58f54383-d123-4c28-9d3b-36cf9585498d
 # ╟─90233555-1edb-4f77-8e24-3c8921f7307d
+# ╟─2d511f23-07fc-4290-bace-001bedc09d0f
+# ╟─2f5ce1cc-5de6-47c5-b72f-03aa779aba5c
+# ╟─7058e0b8-a249-4d60-8b5c-4109c7b871f6
 # ╟─00000000-0000-0000-0000-000000000001
 # ╟─00000000-0000-0000-0000-000000000002
