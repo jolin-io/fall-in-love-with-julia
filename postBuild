@@ -1,5 +1,12 @@
 #!/bin/bash
 set -e
+
+# fixing certificate error from around 01.10.2021 https://github.com/nodesource/distributions/issues/1266
+apt update
+apt install ca-certificates
+apt install libgnutls30
+
+# enabling WebIO
 conda install nodejs
 julia -e '
     using WebIO, IJulia
