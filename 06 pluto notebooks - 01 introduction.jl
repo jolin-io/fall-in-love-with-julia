@@ -513,8 +513,17 @@ Currently, you cannot use
 * `@async` in order to update values reactively. Use the `@bind`macro instead
 """
 
+# ╔═╡ 40ea9be1-e45d-45dd-8f99-365f6ccf34d8
+htl"""
+$(md"## Pluto Dashboards - the bright Future")
+
+Going to come within the next half year!!!
+
+<div style="position: relative; right: 0; top: 0; z-index: 300;"><iframe src="https://www.youtube.com/embed/nRmLfB-bKdc?start=433" width=600 height=340  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+"""
+
 # ╔═╡ 2f5ce1cc-5de6-47c5-b72f-03aa779aba5c
-cm"""## Favourite Pluto Notebooks
+cm"""## Favourite Other Pluto Notebooks
 
 A selection of my favourite Pluto Notebooks published online.
 
@@ -725,6 +734,7 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 # ╟─58f54383-d123-4c28-9d3b-36cf9585498d
 # ╟─90233555-1edb-4f77-8e24-3c8921f7307d
 # ╟─2d511f23-07fc-4290-bace-001bedc09d0f
+# ╟─40ea9be1-e45d-45dd-8f99-365f6ccf34d8
 # ╟─2f5ce1cc-5de6-47c5-b72f-03aa779aba5c
 # ╟─7058e0b8-a249-4d60-8b5c-4109c7b871f6
 # ╟─00000000-0000-0000-0000-000000000001
