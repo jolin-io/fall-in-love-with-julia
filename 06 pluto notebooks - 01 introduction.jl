@@ -34,12 +34,6 @@ using CommonMark
 # ╔═╡ f644142d-4146-43c0-8049-fb345282b31a
 using HypertextLiteral
 
-# ╔═╡ 77efb520-f7d4-44ad-8e8c-f649fb6953a8
-md"""
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/master?
-urlpath=pluto/open?path=/home/jovyan/06%20pluto%20notebooks%20-%2001%20introduction.jl)
-"""
-
 # ╔═╡ 227285cb-0f4a-47ba-9037-143307d6f691
 cm"""
 # Welcome to Pluto.jl!
@@ -671,7 +665,6 @@ uuid = "4ec0a83e-493e-50e2-b9ac-8f72acf5a8f5"
 """
 
 # ╔═╡ Cell order:
-# ╟─77efb520-f7d4-44ad-8e8c-f649fb6953a8
 # ╟─227285cb-0f4a-47ba-9037-143307d6f691
 # ╠═67dcf398-fc6a-4963-a390-d3dcfc69ea8d
 # ╠═a6741b19-d378-4279-a1e4-70c18eb20cb5
