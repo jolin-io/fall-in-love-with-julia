@@ -1,11 +1,3 @@
 #!/bin/bash
-set -e
 
-# enabling WebIO
-conda install nodejs
-julia -e '
-    using WebIO, IJulia
-    # WebIO.install_jupyter_labextension()  # does rais errors currently
-    WebIO.install_jupyter_nbextension()
-    println("Installed WebIO jupyter extensions.")
-'
+# bash script to initialize things. E.g. WebIO might need this https://github.com/mitmath/binder-env/blob/main/postBuild
