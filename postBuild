@@ -1,3 +1,4 @@
 #!/bin/bash
 
-# bash script to initialize things. E.g. WebIO might need this https://github.com/mitmath/binder-env/blob/main/postBuild
+# correct rights for kaggle authentication file
+chmod 600 ~/.kaggle/kaggle.json
