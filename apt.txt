@@ -1,4 +1,1 @@
 # add extra debian `apt install -y` dependencies here
-
-# kaggle dependency
-# python-lxml
