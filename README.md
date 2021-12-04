@@ -2,7 +2,7 @@
 
 # fall-in-love-with-julia
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/main)
 
 An introductory 101 series to get to know the power of Julialang.
 
