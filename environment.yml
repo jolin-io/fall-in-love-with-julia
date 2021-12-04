@@ -6,3 +6,6 @@ dependencies:
   - pip
   - pip:
     - webio_jupyter_extension
+    - kaggle
+    - kaggle-cli
+  
