@@ -25,3 +25,31 @@ Here my favourite passage
 
 > Julia's advantage is that good performance is not limited to a small subset of “built-in” types and operations, and one can write high-level type-generic code that works on arbitrary user-defined types while remaining fast and memory-efficient.
 > Types in languages like Python simply don't provide enough information to the compiler for similar capabilities, so as soon as you used those languages as a Julia front-end you would be stuck.
+
+
+## Local installation
+
+If binder does not work for you, you can install the package locally.
+
+1. Download and install Julia from https://julialang.org/downloads/
+
+2. Instantiate the fall-in-love-with-julia package
+
+    ```bash
+    ProjectFolder="JuliaProjects"
+    mkdir $HOME/$ProjectFolder
+    cd $HOME/$ProjectFolder
+    git clone https://github.com/schlichtanders/fall-in-love-with-julia
+    cd fall-in-love-with-julia
+    julia --project --eval 'import Pkg; Pkg.instantiate(); Pkg.add("IJulia")'
+    ```
+
+3. Run jupyter
+
+    Either use your favorite jupyter installation or run
+
+    ```bash
+    ProjectFolder="JuliaProjects"
+    cd $HOME/$ProjectFolder
+    julia --project --eval 'import IJulia; notebook()' 
+    ```
