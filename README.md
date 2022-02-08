@@ -29,7 +29,7 @@ Here my favourite passage
 
 ## Local installation
 
-If binder does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
+If [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/main) does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
 
 ### Docker (recommended)
 
