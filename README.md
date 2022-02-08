@@ -53,7 +53,7 @@ This process is identical to how mybinder.org is actually doing it. Hence you wi
 
     Usually, a browser is opened automatically for you, but if not, an url is also printed at the very end of the command output. Copy that one to your browser and you are ready to go.
 
-### Julia
+### Julia only
 
 This process is installing dependencies tracked by Julia, which will suffice for 98% of the material here.
 
