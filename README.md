@@ -29,16 +29,43 @@ Here my favourite passage
 
 ## Local installation
 
-If binder does not work for you, you can install the package locally.
+If binder does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
+
+### Docker (recommended)
+
+This process is identical to how mybinder.org is actually doing it. Hence you will get the very same environment.
+
+1. Install [docker](https://docs.docker.com/get-docker/)
+
+2. Install [repo2docker](https://repo2docker.readthedocs.io/en/latest/install.html) by running
+
+    ```bash
+    python3 -m pip install --user jupyter-repo2docker
+    ```
+
+    If you do not have python, consider installing it via [Anaconda](https://www.anaconda.com/products/individual).
+
+3. Execute repo2docker on this repository. It will take several 10 minutes to build everything.
+
+    ```bash
+    jupyter-repo2docker https://github.com/schlichtanders/fall-in-love-with-julia
+    ```
+
+    Usually, a browser is opened automatically for you, but if not, an url is also printed at the very end of the command output. Copy that one to your browser and you are ready to go.
+
+### Julia
+
+This process is installing dependencies tracked by Julia, which will suffice for 98% of the material here.
 
 1. Download and install Julia from https://julialang.org/downloads/
 
 2. Instantiate the fall-in-love-with-julia package
 
     ```bash
-    ProjectFolder="JuliaProjects"
-    mkdir $HOME/$ProjectFolder
-    cd $HOME/$ProjectFolder
+    ProjectFolder="$HOME/JuliaProjects"
+    mkdir -p $ProjectFolder
+    cd $ProjectFolder
+
     git clone https://github.com/schlichtanders/fall-in-love-with-julia
     cd fall-in-love-with-julia
     julia --project --eval 'import Pkg; Pkg.instantiate(); Pkg.add("IJulia")'
@@ -49,7 +76,9 @@ If binder does not work for you, you can install the package locally.
     Either use your favorite jupyter installation or run
 
     ```bash
-    ProjectFolder="JuliaProjects"
-    cd $HOME/$ProjectFolder
+    ProjectFolder="$HOME/JuliaProjects"
+    cd $ProjectFolder
     julia --project --eval 'import IJulia; notebook()' 
     ```
+
+In case a specific example (e.g. the Streaming Kaggle example) does not work, you may need to install extra packages similar to those described in [apt.txt](./apt.txt) or execute further steps on the commandline similar to those described in [postBuild](./postBuild).
