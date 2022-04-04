@@ -63,8 +63,8 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
-    mkdir -p $ProjectFolder
-    cd $ProjectFolder
+    mkdir -p "$ProjectFolder"
+    cd "$ProjectFolder"
 
     git clone https://github.com/schlichtanders/fall-in-love-with-julia
     cd fall-in-love-with-julia
@@ -77,7 +77,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
-    cd $ProjectFolder
+    cd "$ProjectFolder"
     julia --project --eval 'import IJulia; notebook()' 
     ```
 
