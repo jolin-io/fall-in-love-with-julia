@@ -2,7 +2,7 @@
 
 # fall-in-love-with-julia
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jolin-io/fall-in-love-with-julia/main)
 
 An introductory 101 series to get to know the power of Julialang.
 
@@ -29,7 +29,7 @@ Here my favourite passage
 
 ## Local installation
 
-If [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/schlichtanders/fall-in-love-with-julia/main) does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
+If [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jolin-io/fall-in-love-with-julia/main) does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
 
 ### Docker (recommended)
 
@@ -48,7 +48,7 @@ This process is identical to how mybinder.org is actually doing it. Hence you wi
 3. Execute repo2docker on this repository. It will take several 10 minutes to build everything.
 
     ```bash
-    jupyter-repo2docker https://github.com/schlichtanders/fall-in-love-with-julia
+    jupyter-repo2docker https://github.com/jolin-io/fall-in-love-with-julia
     ```
 
     Usually, a browser is opened automatically for you, but if not, an url is also printed at the very end of the command output. Copy that one to your browser and you are ready to go.
@@ -66,7 +66,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
     mkdir -p "$ProjectFolder"
     cd "$ProjectFolder"
 
-    git clone https://github.com/schlichtanders/fall-in-love-with-julia
+    git clone https://github.com/jolin-io/fall-in-love-with-julia
     cd fall-in-love-with-julia
     julia --project --eval 'import Pkg; Pkg.instantiate(); Pkg.add("IJulia")'
     ```
