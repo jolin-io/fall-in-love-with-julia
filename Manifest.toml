@@ -2,7 +2,7 @@
 
 julia_version = "1.8.1"
 manifest_format = "2.0"
-project_hash = "236c150fa9a4c983219ee52d2ba8085eba683755"
+project_hash = "7ffc7f4f7c4468123efdf67dd9898b507ba00b17"
 
 [[deps.ARFFFiles]]
 deps = ["CategoricalArrays", "Dates", "Parsers", "Tables"]
@@ -86,12 +86,6 @@ deps = ["Bijectors", "Distributions", "DistributionsAD", "DocStringExtensions", 
 git-tree-sha1 = "67fcc7d46c26250e89fc62798fbe07b5ee264c6f"
 uuid = "b5ca4192-6429-45e5-a2d9-87aec30a685c"
 version = "0.1.6"
-
-[[deps.AmplNLWriter]]
-deps = ["MathOptInterface"]
-git-tree-sha1 = "7374d65ba6d39da43c49dd0d3a95d417445a46d1"
-uuid = "7c4d4715-977e-5154-bfe0-e096adeac482"
-version = "1.0.1"
 
 [[deps.ArgCheck]]
 git-tree-sha1 = "a3a402a35a2f7e0b87828ccabbd5ebfbebe356b4"
@@ -1368,12 +1362,6 @@ deps = ["ArrayInterfaceCore", "DataStructures", "DiffEqBase", "DocStringExtensio
 git-tree-sha1 = "5a6e6c522e8a7b39b24be8eebcc13cc7885c6f2c"
 uuid = "ccbc3e58-028d-4f4c-8cd5-9ae44345cda5"
 version = "9.2.0"
-
-[[deps.Juniper]]
-deps = ["Distributed", "JSON", "LinearAlgebra", "MathOptInterface", "MutableArithmetics", "Random", "Statistics"]
-git-tree-sha1 = "a0735f588cb750d89ddcfa2f429a2330b0f440c6"
-uuid = "2ddba703-00a4-53a7-87a5-e8b9971dde84"
-version = "0.9.1"
 
 [[deps.KLU]]
 deps = ["LinearAlgebra", "SparseArrays", "SuiteSparse_jll"]
