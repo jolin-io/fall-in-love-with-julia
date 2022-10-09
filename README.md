@@ -53,7 +53,7 @@ This process is identical to how mybinder.org is actually doing it. Hence you wi
 
     Usually, a browser is opened automatically for you, but if not, an url is also printed at the very end of the command output. Copy that one to your browser and you are ready to go.
 
-### Julia only
+### No docker
 
 This process is installing dependencies tracked by Julia, which will suffice for 98% of the material here.
 
@@ -78,7 +78,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
     cd "$ProjectFolder"
-    julia --project --eval 'import IJulia; notebook()' 
+    julia --project --eval 'import IJulia; notebook()'
     ```
 
 In case a specific example (e.g. the Streaming Kaggle example) does not work, you may need to install extra packages similar to those described in [apt.txt](./apt.txt) or execute further steps on the commandline similar to those described in [postBuild](./postBuild).
