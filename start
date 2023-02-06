@@ -1,0 +1,3 @@
+#!/bin/bash
+export JULIA_NUM_THREADS=4
+exec "$@"
