@@ -2,11 +2,14 @@
 
 # fall-in-love-with-julia
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jolin-io/fall-in-love-with-julia/main)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/jolin-io/fall-in-love-with-julia/main)
 
 An introductory 101 series to get to know the power of Julialang.
 
 Author: Stephan Sahm, [Julia User Group Munich](https://www.meetup.com/Julia-User-Group-Munich/).
+
+To open a specific notebook, go to it in github and press the "launch binder" button.
+![screenshot](assets/images/Screenshot_20230207_081343.png)
 
 
 ## Why Julia?
@@ -29,7 +32,7 @@ Here my favourite passage
 
 ## Local installation
 
-If [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jolin-io/fall-in-love-with-julia/main) does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
+If [![Binder](https://mybinder.org/badge_logo.svg)](https://notebooks.gesis.org/binder/v2/gh/jolin-io/fall-in-love-with-julia/main) does not work for you, you can install the package locally. There are two options, using docker, or using plain julia.
 
 ### Docker (recommended)
 
