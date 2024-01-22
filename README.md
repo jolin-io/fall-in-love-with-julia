@@ -70,8 +70,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
     cd "$ProjectFolder"
 
     git clone https://github.com/jolin-io/fall-in-love-with-julia
-    cd fall-in-love-with-julia
-    julia --project --eval 'import Pkg; Pkg.instantiate(); Pkg.add("IJulia")'
+    julia --project="$ProjectFolder/fall-in-love-with-julia" --eval 'import Pkg; Pkg.instantiate(); Pkg.add("IJulia")'
     ```
 
 3. Run jupyter
@@ -80,8 +79,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
-    cd "$ProjectFolder"
-    julia --project --eval 'import IJulia; notebook()'
+    julia --project="$ProjectFolder/fall-in-love-with-julia" --eval 'import IJulia; notebook()'
     ```
 
 In case a specific example (e.g. the Streaming Kaggle example) does not work, you may need to install extra packages similar to those described in [apt.txt](./apt.txt) or execute further steps on the commandline similar to those described in [postBuild](./postBuild).
