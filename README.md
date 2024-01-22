@@ -40,7 +40,7 @@ This process is identical to how mybinder.org is actually doing it. Hence you wi
 
 1. Install [docker](https://docs.docker.com/get-docker/)
 
-2. Install [repo2docker](https://repo2docker.readthedocs.io/en/latest/install.html) by running
+2. Install [repo2docker](https://repo2docker.readthedocs.io/en/latest/install.html) by running in a terminal (bash)
 
     ```bash
     python3 -m pip install --user jupyter-repo2docker
@@ -48,7 +48,7 @@ This process is identical to how mybinder.org is actually doing it. Hence you wi
 
     If you do not have python, consider installing it via [Anaconda](https://www.anaconda.com/products/individual).
 
-3. Execute repo2docker on this repository. It will take several 10 minutes to build everything.
+3. Execute repo2docker on this repository. It will take several 10 minutes to build everything. Again in a terminal (bash):
 
     ```bash
     jupyter-repo2docker https://github.com/jolin-io/fall-in-love-with-julia
@@ -62,7 +62,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
 1. Download and install Julia from https://julialang.org/downloads/
 
-2. Instantiate the fall-in-love-with-julia package
+2. Instantiate the fall-in-love-with-julia package. Run the following in a terminal (bash, for Windows use the subsystemlinux)
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
@@ -75,7 +75,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
 3. Run jupyter
 
-    Either use your favorite jupyter installation or run
+    Either use your favorite jupyter installation or run in a terminal (bash, for Windows use the subsystemlinux)
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
