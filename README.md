@@ -62,7 +62,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
 1. Download and install Julia from https://julialang.org/downloads/
 
-2. Instantiate the fall-in-love-with-julia package. Run the following in a terminal (bash, for Windows use the subsystemlinux)
+2. Instantiate the fall-in-love-with-julia package. Run the following in a terminal (bash/zsh, for Windows use WSL)
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
@@ -75,7 +75,7 @@ This process is installing dependencies tracked by Julia, which will suffice for
 
 3. Run jupyter
 
-    Either use your favorite jupyter installation or run in a terminal (bash, for Windows use the subsystemlinux)
+    Either use your favorite jupyter installation or run in a terminal (bash/zsh, for Windows use WSL)
 
     ```bash
     ProjectFolder="$HOME/JuliaProjects"
